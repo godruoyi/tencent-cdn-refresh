@@ -6,15 +6,13 @@ const instance = axios.create({
     withCredentials: false
 })
 
+instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+
 instance.interceptors.request.use(function (request) {
     return request
 })
 
 instance.interceptors.response.use(response => response.data, (error) =>  {
-    if (response && response.status >= 200 && response.status < 300) {
-        return response
-    }
-
     return Promise.reject(error)
 })
 

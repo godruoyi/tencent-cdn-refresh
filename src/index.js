@@ -1,4 +1,3 @@
-let Cdn = require('./Cdn');
-let cdn = new Cdn();
+let refresh = require('./refresh');
 
-module.exports = cdn;
+module.exports = refresh

@@ -1,18 +1,33 @@
 {
   "name": "tencent-cdn-refresh",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "description": "Refresh tencent cdn cache.",
+  "version": "1.0",
   "scripts": {
     "test": "mocha"
   },
-  "author": "",
+  "keywords": [
+    "tencent",
+    "cdn",
+    "cacne",
+    "refresh"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/godruoyi/tencent-cdn-refresh.git"
+  },
+  "author": "godruoyi",
+  "bugs": {
+    "url": "https://github.com/godruoyi/tencent-cdn-refresh/issues"
+  },
   "license": "MIT",
+  "dependencies": {},
   "devDependencies": {
     "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
-    "mocha": "^6.0.2"
+    "mocha": "^6.0.2",
+    "nock": "^10.0.6"
   }
 }

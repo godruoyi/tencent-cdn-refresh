@@ -1,4 +1,4 @@
-let crypto = require('crypto')
+let crypto = require("crypto");
 
 class Signature {
     /**
@@ -7,9 +7,9 @@ class Signature {
      * @param  {String} secretKey
      * @param  {String} path
      */
-    constructor(secretKey = null, path = '/v2/index.php') {
-        this.secretKey = secretKey
-        this.requestPath = path
+    constructor(secretKey = null, path = "/v2/index.php") {
+        this.secretKey = secretKey;
+        this.requestPath = path;
     }
 
     /**
@@ -18,9 +18,9 @@ class Signature {
      * @param {String} secretKey
      */
     setSecretKey(secretKey) {
-        this.secretKey = secretKey
+        this.secretKey = secretKey;
 
-        return this
+        return this;
     }
 
     /**
@@ -33,12 +33,12 @@ class Signature {
      * @return {String}
      */
     sign(method, host, params) {
-        let result = this.toQueryString(this.dictionaryOrder(params))
-        method = method.toUpperCase()
+        let result = this.toQueryString(this.dictionaryOrder(params));
+        method = method.toUpperCase();
 
-        let originSignature =`${method}${host}${this.requestPath}?${result}`
+        let originSignature =`${method}${host}${this.requestPath}?${result}`;
 
-        return this.getHmacAlgorithm().update(originSignature).digest().toString('base64')
+        return this.getHmacAlgorithm().update(originSignature).digest().toString("base64");
     }
 
     /**
@@ -47,7 +47,7 @@ class Signature {
      * @return {mixed}
      */
     getHmacAlgorithm() {
-        return crypto.createHmac('sha1', this.secretKey)
+        return crypto.createHmac("sha1", this.secretKey);
     }
 
     /**
@@ -58,16 +58,16 @@ class Signature {
      * @return {string}
      */
     toQueryString(obj) {
-        let keys = Object.keys(obj)
-        let str = ''
+        let keys = Object.keys(obj);
+        let str = "";
 
         keys.forEach(k => {
             if (obj.hasOwnProperty(k)) {
-                str += `&${k}=${obj[k]}`
+                str += `&${k}=${obj[k]}`;
             }
-        })
+        });
 
-        return str.slice(1)
+        return str.slice(1);
     }
 
     /**
@@ -78,16 +78,16 @@ class Signature {
      * @return {array}
      */
     dictionaryOrder(params) {
-        let result = []
+        let result = [];
 
         for (let key of Object.keys(params).sort()) {
-            result[key] = params[key]
+            result[key] = params[key];
         }
 
-        return result
+        return result;
     }
 }
 
-let signature = new Signature
+let signature = new Signature;
 
-module.exports = signature
+module.exports = signature;

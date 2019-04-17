@@ -3,3 +3,5 @@ yarn.lock
 .DS_Store
 npm-debug.log*
 package-lock.json
+dist
+yarn-error.log*

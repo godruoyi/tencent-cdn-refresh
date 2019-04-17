@@ -1,3 +1,3 @@
-let refresh = require('./refresh');
+import Refresh from "./refresh";
 
-module.exports = refresh
+module.exports = Refresh;

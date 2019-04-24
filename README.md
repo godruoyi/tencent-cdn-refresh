@@ -1,6 +1,8 @@
 <h1 align="center"> Refresh tencent cloud CDN cache </h1>
 
 ## 说明
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgodruoyi%2Ftencent-cdn-refresh.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgodruoyi%2Ftencent-cdn-refresh?ref=badge_shield)
+
 
 通过 [腾讯云无服务器云函数](https://cloud.tencent.com/product/scf)，自动刷新 CDN 缓存。
 
@@ -26,3 +28,7 @@
 ## LISTEN
 
 MIT
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgodruoyi%2Ftencent-cdn-refresh.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgodruoyi%2Ftencent-cdn-refresh?ref=badge_large)

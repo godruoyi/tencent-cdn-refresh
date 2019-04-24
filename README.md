@@ -1,5 +1,10 @@
 <h1 align="center"> Refresh tencent cloud CDN cache </h1>
 
+[![Build Status](https://scrutinizer-ci.com/g/godruoyi/tencent-cdn-refresh/badges/build.png?b=master)](https://travis-ci.org/godruoyi/tencent-cdn-refresh)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/godruoyi/tencent-cdn-refresh/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/godruoyi/tencent-cdn-refresh/?branch=master)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fgodruoyi%2Ftencent-cdn-refresh.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fgodruoyi%2Ftencent-cdn-refresh?ref=badge_shield)
+
+
 ## 说明
 
 通过 [腾讯云无服务器云函数](https://cloud.tencent.com/product/scf)，自动刷新 CDN 缓存。
@@ -18,11 +23,11 @@
 
 ## 参考
 
-[对象存储 COSCMD 工具](https://cloud.tencent.com/document/product/436/10976)
-[无服务器云函数 - 文档中心 - 腾讯云](https://cloud.tencent.com/document/product/583)
-[内容分发网络 - 文档中心 - 腾讯云](https://cloud.tencent.com/document/product/228)
-[内容分发网络 刷新 URL - API 文档 - 文档中心 - 腾讯云](https://cloud.tencent.com/document/product/228/3946)
+* [对象存储 COSCMD 工具](https://cloud.tencent.com/document/product/436/10976)
+* [无服务器云函数 - 文档中心 - 腾讯云](https://cloud.tencent.com/document/product/583)
+* [内容分发网络 - 文档中心 - 腾讯云](https://cloud.tencent.com/document/product/228)
+* [内容分发网络 刷新 URL - API 文档 - 文档中心 - 腾讯云](https://cloud.tencent.com/document/product/228/3946)
 
 ## LISTEN
 
-MIT
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fgodruoyi%2Ftencent-cdn-refresh.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fgodruoyi%2Ftencent-cdn-refresh?ref=badge_large)

@@ -1,5 +1,5 @@
-import http from "./http";
-import signature from "./signature";
+const http = require('./http');
+const signature = require('./signature');
 
 class Refresh {
     constructor(configs) {
@@ -27,7 +27,7 @@ class Refresh {
     flashDirs(dirs) {
         this.action = "RefreshCdnDir";
 
-        return http.post(this.requestUrl, this.buildRequestParams(dirs, "dirs"));
+        return this.request(this.buildRequestParams(dirs, "dirs"));
     }
 
     /**
@@ -40,7 +40,28 @@ class Refresh {
     flashUrls(urls) {
         this.action = "RefreshCdnUrl";
 
-        return http.post(this.requestUrl, this.buildRequestParams(urls, "urls"));
+        return this.request(this.buildRequestParams(urls, "urls"));
+    }
+
+    /**
+     * Request
+     *
+     * @param  {mixed} params
+     *
+     * @return {mixed}
+     */
+    request(params) {
+        let requestUrl = this.requestUrl
+
+        return new Promise(function (resolve, reject) {
+            http.post(requestUrl, {form: params}, function (err, httpResponse, body) {
+                if (err) {
+                    reject(err, httpResponse, body)
+                } else {
+                    resolve(httpResponse.body, body)
+                }
+            });
+        });
     }
 
     /**

@@ -1,9 +1,10 @@
 <h1 align="center"> Refresh tencent cloud CDN cache </h1>
 
-[![Build Status](https://scrutinizer-ci.com/g/godruoyi/tencent-cdn-refresh/badges/build.png?b=master)](https://travis-ci.org/godruoyi/tencent-cdn-refresh)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/godruoyi/tencent-cdn-refresh/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/godruoyi/tencent-cdn-refresh/?branch=master)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fgodruoyi%2Ftencent-cdn-refresh.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fgodruoyi%2Ftencent-cdn-refresh?ref=badge_shield)
-
+<p align="center">
+<a href="https://travis-ci.org/godruoyi/tencent-cdn-refresh"><img src="https://scrutinizer-ci.com/g/godruoyi/tencent-cdn-refresh/badges/build.png?b=master" alt="Build Status"></a>
+<a href="https://scrutinizer-ci.com/g/godruoyi/tencent-cdn-refresh/?branch=master"><img src="https://scrutinizer-ci.com/g/godruoyi/tencent-cdn-refresh/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fgodruoyi%2Ftencent-cdn-refresh?ref=badge_shield"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fgodruoyi%2Ftencent-cdn-refresh.svg?type=shield" alt="FOSSA Status"></a>
+</p>
 
 ## 说明
 

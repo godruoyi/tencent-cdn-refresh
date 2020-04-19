@@ -16,7 +16,7 @@
 
 > 云函数暂不支持直接引入已发布到 `npm` 的 `package`，可通过 `zip` 打包方式上传。
 
-点击 [这里](https://github.com/godruoyi/tencent-cdn-refresh/blob/master/refreshcache.zip) 下载 ZIP 文件。
+点击 [这里](https://github.com/godruoyi/tencent-cdn-refresh/releases) 下载 ZIP 文件。
 
 上传成功后，编辑入口文件的 `SecretId` 及 `SecretKey`，添加 **触发方式**后即可查看实际的运行效果。
 

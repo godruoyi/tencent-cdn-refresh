@@ -1,0 +1,8 @@
+{
+  "name": "refresher",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "tencent-cdn-refresh": ".."
+  }
+}

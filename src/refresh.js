@@ -19,6 +19,9 @@ class Refresh {
 
     /**
      * Flash dirs cache
+     * example:
+     *      flashDirs(dir1)
+     *      flashDirs(['dir1', 'dir2'])
      *
      * @param  {mixed} dirs
      *
@@ -32,6 +35,10 @@ class Refresh {
 
     /**
      * Flash url cache
+     *
+     * example:
+     *      flashUrls(url1)
+     *      flashUrls(['url1', 'url2'])
      *
      * @param  {mixed} urls
      *

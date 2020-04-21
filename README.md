@@ -20,28 +20,30 @@
 
 点击 [这里](https://github.com/godruoyi/tencent-cdn-refresh/releases) 下载 ZIP 文件。
 
-上传成功后，编辑入口文件的 `SecretId` 及 `SecretKey`，添加 **触发方式**后即可查看实际的运行效果。
+也可以将仓库克隆到本地后打开 [example](./example) 这个目录，之后输入 `npm install` 安装依赖，最后直接使用 `SCF的 VSCode 插件` 上传这个目录即可。
+
+上传成功后，新增两个环境变量 `SECRET_ID` 及 `SECRET_KEY`，添加 **触发方式** 后即可查看实际的运行效果。
 
 更多资料请参考官方文档。另外你可能需要 [对象存储 COSCMD 工具](https://cloud.tencent.com/document/product/436/10976) 来自动上传你本地的资源文件。
 
-## 在其他环境使用
+## 接口
 
 安装依赖并使用
 
 ```bash
-$ npm install tencent-cdn-refresh
+npm install tencent-cdn-refresh
 ```
 
 ```JavaScript
-import tencentCdn from 'tencent-cdn-refresh'
+import Refresher from 'tencent-cdn-refresh'
 
-const Refresh = new tencentCdn({
+const refresher = new Refresher({
     SecretId: '',
     SecretKey: ''
 });
 
-Refresh.flashUrls('url1')
-// Refresh.flashDirs('dir1')
+refresher.purgeUrlsCache('url1');
+// refresher.purgeDirsCache('dir1');
 ```
 
 ## 参考

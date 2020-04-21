@@ -1,0 +1,26 @@
+Resources:
+  default:
+    Type: 'TencentCloud::Serverless::Namespace'
+    aaa:
+      Properties:
+        CodeUri: .
+        Description: Auto refresh cdn cache
+        Environment:
+          Variables:
+            SECRET_ID: secretId
+            SECRET_KEY: secretKey
+        Handler: index.main_handler
+        MemorySize: 64
+        Timeout: 3
+        Runtime: Nodejs8.9
+        # Events:
+        #   cli-appid.cos.ap-beijing.myqcloud.com: # full bucket name
+        #     Type: COS
+        #     Properties:
+        #       Bucket: cli-appid.cos.ap-beijing.myqcloud.com
+        #       Filter:
+        #         Prefix: filterdir/
+        #         Suffix: .jpg
+        #       Events: cos:ObjectCreated:*
+        #       Enable: True
+      Type: 'TencentCloud::Serverless::Function'

@@ -1,21 +1,11 @@
-import Refresh from './../src/refresh'
-import chai from 'chai'
-import nock from 'nock'
+const Refresher = require('../src/index')
+const nock = require('nock')
+const { assert } = require('chai')
 
-let assert = chai.assert
-
-describe('Tencent Refresh CDN Cache test', function() {
-    describe('The framework test', function () {
-
-        it('Assert refresh is object', function() {
-            let refresh = new Refresh
-
-            assert.isObject(refresh)
-            assert.equal('https://cdn.api.qcloud.com/v2/index.php', refresh.requestUrl);
-        })
-
-        it('Assert transformer Urls', function () {
-            let refresh = new Refresh()
+describe('Tencent Refresh CDN Cache test', () => {
+    describe('The framework test', () => {
+        it('Assert transformer Urls', () => {
+            let refresh = new Refresher()
 
             let datas = refresh.transformerUrls('https://hy.dayuw.cn/')
 
@@ -30,8 +20,8 @@ describe('Tencent Refresh CDN Cache test', function() {
             assert.hasAllKeys(datas1, ['dirs.0', 'dirs.1', 'dirs.2'])
         })
 
-        it('Assert build Request Params', function() {
-            let refresh = new Refresh({SecretKey: 'SecretKey', SecretId: 'SecretId'})
+        it('Assert build Request Params', () => {
+            let refresh = new Refresher({SecretKey: 'SecretKey', SecretId: 'SecretId'})
             let config  = refresh.buildRequestParams('https://hy.dayuw.cn/')
 
             assert.isObject(config)
@@ -41,44 +31,36 @@ describe('Tencent Refresh CDN Cache test', function() {
         })
     })
 
-    describe('Test flash cache', function () {
+    describe('Test flash cache', () => {
         let refresh
 
         before(() => {
-            refresh = new Refresh({
+            refresh = new Refresher({
                 SecretId: 'AKIDjLpdemoWwDNNKBtdemolEWdpsSxJ',
                 SecretKey: 'JRXXNWgfU4XQNmodeUeg2TidemoqdHm'
             })
         })
 
-        it('Assert flashDirs', function () {
+        it('Assert purgeDirsCache', () => {
             nock(`https://${refresh.host}`)
                 .filteringRequestBody(body => '*')
                 .post(refresh.configs.path, '*')
-                .reply(200, 'mock-result')
+                .reply(200, { data: 'mock-result' })
 
-            return Promise.all([
-                refresh.flashDirs(['https://hy.dayuw.cn']).then(function (response) {
-                    assert.equal(response, 'mock-result')
-                }).catch(function (error) {
-                    assert.isTrue(false)
-                })
-            ])
+            return refresh.purgeDirsCache(['https://hy.dayuw.cn']).then((response) => {
+                assert.deepEqual(response, { data: 'mock-result' })
+            }).catch(assert.fail)
         })
 
-        it('Assert flashUrls', function () {
+        it('Assert purgeUrlsCache', () => {
             nock(`https://${refresh.host}`)
                 .filteringRequestBody(body => '*')
                 .post(refresh.configs.path, '*')
-                .reply(200, 'mock-result')
+                .reply(200, { data: 'mock-result' })
 
-            return Promise.all([
-                refresh.flashUrls('http://www.test.com').then(function (response) {
-                    assert.equal(response, 'mock-result')
-                }).catch(function (error) {
-                    assert.isTrue(false)
-                })
-            ])
+            return refresh.purgeUrlsCache('http://www.test.com').then((response) => {
+                assert.deepEqual(response, { data: 'mock-result' })
+            }).catch(assert.fail)
         })
     })
 })

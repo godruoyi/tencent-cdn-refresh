@@ -10,19 +10,15 @@
 
 通过 [腾讯云无服务器云函数](https://cloud.tencent.com/product/scf)，自动刷新 CDN 缓存。
 
-> 通过腾讯云无服务器云函数刷新时，需要「*执行方法*」改为: scf.main_handler
-
 ## 使用
 
-登录腾讯云无服务器云函数 [管理后台](https://console.cloud.tencent.com/scf/list/create)，新建云函数并上传 `Zip` 代码包。
+1、登录腾讯云无服务器云函数 [管理后台](https://console.cloud.tencent.com/scf/list/create)，新建云函数并上传代码包（运行环境选择 Nodejs 10.*）。
 
-> 云函数暂不支持直接引入已发布到 `npm` 的 `package`，可通过 `zip` 打包方式上传。
+2、克隆仓库到本地后进入 [example](./example) 目录，安装依赖；安装成功后将 example 目录上传到 SCF 即可（提交方式可选择「本地上传文件夹」）。
 
-点击 [这里](https://github.com/godruoyi/tencent-cdn-refresh/releases) 下载 ZIP 文件。
+> 上传 ZIP 的方式当代码包比较大时，SCF 云服务一直提示创建失败。
 
-也可以将仓库克隆到本地后打开 [example](./example) 这个目录，之后输入 `npm install` 安装依赖，最后直接使用 `SCF的 VSCode 插件` 上传这个目录即可。
-
-上传成功后，新增两个环境变量 `SECRET_ID` 及 `SECRET_KEY`，添加 **触发方式** 后即可查看实际的运行效果。
+3、上传成功后，新增两个环境变量 `SECRET_ID` 及 `SECRET_KEY`，添加 **触发方式** 后即可查看实际的运行效果。
 
 更多资料请参考官方文档。另外你可能需要 [对象存储 COSCMD 工具](https://cloud.tencent.com/document/product/436/10976) 来自动上传你本地的资源文件。
 

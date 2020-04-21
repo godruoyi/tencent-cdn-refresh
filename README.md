@@ -20,7 +20,7 @@
 
 点击 [这里](https://github.com/godruoyi/tencent-cdn-refresh/releases) 下载 ZIP 文件。
 
-也可以使用 `SCF的 VSCode 插件` 直接上传 [/example](./example) 这个目录。
+也可以将仓库克隆到本地后打开 [example](./example) 这个目录，之后输入 `npm install` 安装依赖，最后直接使用 `SCF的 VSCode 插件` 上传这个目录即可。
 
 上传成功后，新增两个环境变量 `SECRET_ID` 及 `SECRET_KEY`，添加 **触发方式** 后即可查看实际的运行效果。
 

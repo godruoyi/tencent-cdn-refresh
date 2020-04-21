@@ -1,7 +1,7 @@
 const Refresher = require('tencent-cdn-refresh')
 const refresher = new Refresher({
-    SecretId: process.env.SecretId,
-    SecretKey: process.env.SecretKey
+    SecretId: process.env.SECRET_ID,
+    SecretKey: process.env.SECRET_KEY
 })
 
 /**
